@@ -1,0 +1,18 @@
+---
+import SiteLayout from './SiteLayout.astro';
+interface Props { title: string; description: string; topics: string[]; }
+const { title, description, topics } = Astro.props;
+---
+<SiteLayout title={title} description={description}>
+  <p class="eyebrow">null route queen / field notes</p>
+  <h1 class="page-title">{title}</h1>
+  <p class="intro">{description}</p>
+  <ul class="topic-list" aria-label="Topics to explore">
+    {topics.map(topic => <li>{topic}</li>)}
+  </ul>
+  <section class="card starter">
+    <h2>Notes coming soon</h2>
+    <slot />
+  </section>
+  <a href="/">← Back to Home</a>
+</SiteLayout>
