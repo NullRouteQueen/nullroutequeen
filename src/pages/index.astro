@@ -2,9 +2,15 @@
 import SiteLayout from '../layouts/SiteLayout.astro';
 ---
 <SiteLayout title="Home" description="Null Route Queen — networking, Linux, CCNP, firewall notes, and side quests.">
-<p class="eyebrow">hello world / null route engaged</p>
+<p class="eyebrow hero-terminal"><span aria-hidden="true">&gt; </span>hello world / null route engaged</p>
 
 			<h1>Null Route Queen</h1>
+
+			<p class="hero-status">
+				<span>Fedora online</span><span aria-hidden="true"> • </span>
+				<span>CCNP in progress</span><span aria-hidden="true"> • </span>
+				<span>side quest probability: high</span>
+			</p>
 
 			<p class="tagline">Networking • Linux • CCNP • Side Quests</p>
 
@@ -13,6 +19,11 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 				firewall notes, infrastructure war stories, and whatever side quest
 				refuses to stay in its lane.
 			</p>
+
+			<aside class="card tinkering" aria-labelledby="tinkering-title">
+				<h2 id="tinkering-title">Currently tinkering with</h2>
+				<p>CCNP labs, Fedora fine-tuning, and a few homelab ideas waiting their turn.</p>
+			</aside>
 
 			<section class="grid" aria-label="Explore the site">
 				<a class="card card-link" href="/network-lab/">
@@ -41,3 +52,32 @@ import SiteLayout from '../layouts/SiteLayout.astro';
 				</a>
 			</section>
 </SiteLayout>
+
+<style>
+	.hero-terminal {
+		font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+		color: #99cfc8;
+	}
+
+	.hero-terminal span {
+		color: #b8a5e3;
+	}
+
+	.hero-status {
+		margin: 1.25rem 0 0;
+		max-width: 720px;
+		color: #a1a1aa;
+		font-size: 0.85rem;
+		line-height: 1.8;
+		text-wrap: pretty;
+	}
+
+	.hero-status span:not([aria-hidden]) {
+		display: inline-block;
+	}
+
+	.tinkering {
+		max-width: 720px;
+		margin-top: 2rem;
+	}
+</style>
