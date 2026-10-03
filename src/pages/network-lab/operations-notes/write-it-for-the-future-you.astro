@@ -1,0 +1,83 @@
+---
+import SiteLayout from '../../../layouts/SiteLayout.astro';
+---
+<SiteLayout
+  title="Write It for the Future You"
+  description="Operational ticket notes as packet captures for human events."
+>
+  <p class="eyebrow">null route queen / network lab / operations notes</p>
+
+  <h1 class="page-title">Write It for the Future You</h1>
+
+  <p class="intro">
+    Operational ticket notes should function like packet captures for human events:
+    what happened, when it happened, who participated, what changed, and what happened next.
+  </p>
+
+  <article class="card article">
+    <h2>The lesson</h2>
+
+    <p>
+      During after-hours incidents, document what actually happened —
+      not what you later assume happened.
+    </p>
+
+    <p>
+      A missed call is not a conversation.<br />
+      A voicemail is not confirmation.<br />
+      A message sent is not acknowledgement.<br />
+      A conversation on the 11th is not a conversation on the 8th.
+    </p>
+
+    <h2>Capture these explicitly</h2>
+
+    <ul>
+      <li>Timestamp</li>
+      <li>Contact attempt</li>
+      <li>Contact method</li>
+      <li>Whether contact was actually made</li>
+      <li>What was requested</li>
+      <li>What action was taken</li>
+      <li>Outcome</li>
+      <li>Next owner / next action</li>
+    </ul>
+
+    <h2>Example</h2>
+
+    <p><strong>Bad:</strong></p>
+
+    <blockquote>
+      <p>Contacted Andrew.</p>
+    </blockquote>
+
+    <p><strong>Better:</strong></p>
+
+    <blockquote>
+      <p>09/08 03:14 — Called Andrew; no answer. Voicemail left requesting callback.</p>
+    </blockquote>
+
+    <p>Then later:</p>
+
+    <blockquote>
+      <p>09/11 10:22 — Spoke with Andrew. Reviewed incident and confirmed follow-up action.</p>
+    </blockquote>
+
+    <h2>Why this matters</h2>
+
+    <p>
+      Weeks later, the ticket should tell the story without requiring reconstruction
+      from Teams, Zoom, phone history, email, or memory.
+    </p>
+
+    <p>
+      Treat operational notes like a packet capture:
+      <strong>what happened, when it happened, who participated, what changed, and what happened next.</strong>
+    </p>
+
+    <p>
+      Future Daph should be able to replay the incident from the notes.
+    </p>
+  </article>
+
+  <p><a href="/network-lab/operations-notes/">← Back to Operations Notes</a></p>
+</SiteLayout>

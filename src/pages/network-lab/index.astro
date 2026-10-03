@@ -1,0 +1,40 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+---
+<SiteLayout
+  title="Network Lab"
+  description="WAN topology, routing, packet captures, operations lessons, and things that should have converged by now."
+>
+  <p class="eyebrow">null route queen / field notes</p>
+
+  <h1 class="page-title">Network Lab</h1>
+
+  <p class="intro">
+    A home for lab topologies, troubleshooting walkthroughs, packet captures,
+    and the operational lessons that explain what actually happened.
+  </p>
+
+  <section class="grid" aria-label="Network Lab topics">
+    <a class="card card-link" href="/network-lab/wan-topology/">
+      <h2>WAN Topology</h2>
+      <p>Site relationships, paths, dependencies, and diagrams that should match reality.</p>
+    </a>
+
+    <a class="card card-link" href="/network-lab/routing/">
+      <h2>Routing</h2>
+      <p>Routes, protocols, path selection, troubleshooting, and the occasional mystery next hop.</p>
+    </a>
+
+    <a class="card card-link" href="/network-lab/packet-captures/">
+      <h2>Packet Captures</h2>
+      <p>What the packets actually said when the humans were still guessing.</p>
+    </a>
+
+    <a class="card card-link" href="/network-lab/operations-notes/">
+      <h2>Operations Notes</h2>
+      <p>Incident records, handoffs, timestamps, and lessons learned from reconstructing real events.</p>
+    </a>
+  </section>
+
+  <p><a href="/">← Back to Home</a></p>
+</SiteLayout>
