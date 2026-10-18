@@ -1,0 +1,101 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+---
+<SiteLayout
+  title="The Ghost in the DNS Zone"
+  description="Notes from Daph’s October 2026 Cloudflare and DNS investigation: a legacy GoDaddy-pay CNAME clue, reconnaissance, and following the evidence without overclaiming."
+>
+  <article aria-labelledby="article-title">
+    <header>
+      <p class="eyebrow">null route queen / security / October 2026</p>
+      <h1 id="article-title" class="page-title">The Ghost in the DNS Zone</h1>
+      <p class="intro">
+        An unfamiliar DNS record can make a quiet zone feel haunted. During my
+        October 2026 Cloudflare and DNS reconnaissance investigation, a legacy
+        GoDaddy-pay CNAME became a clue worth following. The useful question was:
+        what does the evidence actually support?
+      </p>
+    </header>
+
+    <section class="card starter" aria-labelledby="starting-point">
+      <h2 id="starting-point">Start with the clue</h2>
+      <p>
+        The starting point was Cloudflare and DNS evidence, with a legacy
+        GoDaddy-pay CNAME in the picture. That association gave the investigation
+        a direction: understand the record’s purpose and its relationship to
+        the site’s history before treating it as a security finding.
+      </p>
+      <p>
+        A CNAME maps one DNS name to another. Its presence alone does not explain
+        who created it, whether a service is still needed, or whether anyone
+        has abused it. “GoDaddy-pay” is the clue described here; this account
+        does not reproduce an exact hostname or target.
+      </p>
+    </section>
+
+    <section class="card starter" aria-labelledby="separate-evidence">
+      <h2 id="separate-evidence">Keep the evidence and the explanation separate</h2>
+      <p>
+        A legacy service association is a plausible explanation for an unfamiliar
+        record. Plausible is a place to begin checking. It is not a substitute
+        for confirming the record’s history, current destination, and intended use.
+      </p>
+      <p>
+        Reconnaissance needs the same discipline. A request can show that someone
+        tried a path or hostname. It does not, by itself, establish access,
+        compromise, or a connection to a particular DNS record. Putting two
+        observations next to each other does not establish cause and effect.
+      </p>
+      <p>
+        This account does not establish an attacker’s identity, a successful
+        intrusion, or a subdomain takeover. The legacy CNAME is a lead, not
+        evidence of any of those outcomes.
+      </p>
+    </section>
+
+    <section class="card starter" aria-labelledby="workable-path">
+      <h2 id="workable-path">Understand the risk before changing the zone</h2>
+      <p>
+        The practical lesson is to preserve the evidence and identify dependencies
+        before making a change. Weird does not automatically mean malicious.
+        Weird means: go look. An unfamiliar record might be obsolete; it might
+        also support something that still matters.
+      </p>
+      <p>
+        Before deleting the weird-looking thing and congratulating yourself,
+        make sure Future You is not about to inherit an outage.
+      </p>
+
+      <p>The checklist I would carry into the next investigation:</p>
+      <ol>
+        <li>Record the DNS name, type, target, and observation time before editing.</li>
+        <li>Check authoritative DNS and distinguish current answers from historical evidence.</li>
+        <li>Confirm the associated service and whether the record is still required.</li>
+        <li>Read request outcomes alongside the requests; keep attempted access separate from successful access.</li>
+        <li>Choose a justified change, preserve a rollback path, and verify the affected service afterward.</li>
+      </ol>
+      <p>
+        These are investigation steps, not a claim that every check or a DNS
+        cleanup was completed in this case. The evidence summarized here does
+        not establish a remediation outcome.
+      </p>
+    </section>
+
+    <section class="card starter" aria-labelledby="lesson">
+      <h2 id="lesson">Let the evidence set the size of the story</h2>
+      <p>
+        The ghost in this story is the trace of an older service in a DNS zone.
+        Following that trace is useful even when it does not end in a dramatic
+        incident report. Knowing what remains uncertain is part of understanding
+        the system.
+      </p>
+      <p>
+        Investigate first. Understand the risk. Explain what the evidence supports.
+        Then choose the safest workable path. The DNS zone does not need a
+        scarier story than the facts can carry.
+      </p>
+    </section>
+  </article>
+
+  <p><a href="/security/">← Back to Security</a></p>
+</SiteLayout>
