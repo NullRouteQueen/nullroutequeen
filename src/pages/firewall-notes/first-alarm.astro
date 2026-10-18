@@ -1,0 +1,122 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+---
+<SiteLayout
+  title="First Alarm"
+  description="Least privilege, unexpected vendor destinations, log evidence, and why verification beats guessing."
+>
+  <article aria-labelledby="article-title">
+    <header>
+      <p class="eyebrow">null route queen / firewall notes / field lesson</p>
+
+      <h1 id="article-title" class="page-title">First Alarm</h1>
+
+      <p class="intro">
+        A simple vendor-cloud firewall request stopped being simple the moment
+        the traffic logs showed a destination nobody had mentioned.
+      </p>
+    </header>
+
+    <section class="card starter" aria-labelledby="request">
+      <h2 id="request">Start narrow</h2>
+
+      <p>
+        The request was straightforward: allow a fire panel to reach the vendor's
+        cloud service, but only on the ports the application actually required.
+      </p>
+
+      <p>
+        The policy was intentionally restrictive. The expected traffic was limited
+        to ports <code>2001</code>, <code>4001</code>, and <code>6001</code>,
+        with destination access kept as narrow as practical.
+      </p>
+
+      <p>
+        Least privilege is not about making the rule difficult. It is about
+        understanding exactly what the device needs and allowing no more than that.
+      </p>
+    </section>
+
+    <section class="card starter" aria-labelledby="logs">
+      <h2 id="logs">Then the logs told a different story</h2>
+
+      <p>
+        During testing, the panel tried to reach an additional destination that
+        was not part of the original information.
+      </p>
+
+      <p>
+        This is where it is easy to make one of two bad decisions:
+        block it because it was unexpected, or widen the rule because the device
+        was not working.
+      </p>
+
+      <p>
+        Neither answer was justified yet. The logs had given us evidence of an
+        attempted connection. They had not told us why the destination was needed.
+      </p>
+    </section>
+
+    <section class="card starter" aria-labelledby="verify">
+      <h2 id="verify">Verify before you widen</h2>
+
+      <p>
+        The next step was not to guess. We checked the destination against the
+        vendor's requirements, and the vendor confirmed that it was legitimate
+        for the service.
+      </p>
+
+      <p>
+        That confirmation changed the situation. The new destination was no longer
+        "mystery traffic." It was a documented dependency that could be evaluated
+        and added on purpose.
+      </p>
+
+      <p>
+        Weird does not automatically mean malicious. Weird means: go look.
+      </p>
+    </section>
+
+    <section class="card starter" aria-labelledby="change">
+      <h2 id="change">Make the smallest justified change</h2>
+
+      <p>
+        Once the destination was verified, the firewall policy could be adjusted
+        without turning a tightly scoped rule into a broad exception.
+      </p>
+
+      <p>
+        The change still followed the normal review process. A second set of eyes
+        mattered because firewall work has a habit of looking obvious right before
+        it becomes somebody else's outage.
+      </p>
+
+      <p>
+        The goal was not "make it work at any cost." The goal was:
+        make it work, understand why it works, and preserve the control that made
+        the rule safe in the first place.
+      </p>
+    </section>
+
+    <section class="card starter" aria-labelledby="lesson">
+      <h2 id="lesson">The lesson</h2>
+
+      <p>
+        Least privilege and good customer service are not opposites.
+      </p>
+
+      <p>
+        You do not have to choose between reflexively saying no and opening the
+        firewall wider than necessary. Investigate the evidence, verify the
+        dependency, document what changed, and make the narrowest change that
+        solves the real problem.
+      </p>
+
+      <p>
+        Security works better when "no" is not the first tool in the box.
+      </p>
+    </section>
+  </article>
+
+  <p><a href="/firewall-notes/">← Back to Firewall Notes</a></p>
+</SiteLayout>

@@ -1,0 +1,28 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+---
+<SiteLayout
+  title="Firewall Notes"
+  description="Palo Alto, policy design, least privilege, traffic logs, and the occasional mystery vendor IP."
+>
+  <p class="eyebrow">null route queen / firewall notes</p>
+
+  <h1 class="page-title">Firewall Notes</h1>
+
+  <p class="intro">
+    Policy reasoning, log-reading notes, troubleshooting examples,
+    and the lessons learned when the firewall is technically doing exactly what you told it to do.
+  </p>
+
+  <section class="grid" aria-label="Firewall Notes articles">
+    <a class="card card-link" href="/firewall-notes/first-alarm/">
+      <h2>First Alarm</h2>
+      <p>
+        Least privilege, unexpected vendor destinations, log evidence,
+        and why verification beats guessing.
+      </p>
+    </a>
+  </section>
+
+  <p><a href="/">← Back to Home</a></p>
+</SiteLayout>
