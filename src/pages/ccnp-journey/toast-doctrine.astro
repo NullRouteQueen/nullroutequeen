@@ -1,0 +1,145 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+---
+<SiteLayout
+  title="Toast Doctrine"
+  description="A Spanning Tree memory system where BPDU = toast, TCN = burnt toast, and the root bridge is the toaster."
+>
+  <article aria-labelledby="article-title">
+    <header>
+      <p class="eyebrow">null route queen / ccnp journey / spanning tree</p>
+
+      <h1 id="article-title" class="page-title">Toast Doctrine</h1>
+
+      <p class="intro">
+        Spanning Tree finally started sticking when I stopped treating it like
+        protocol soup and started treating the network like a kitchen appliance.
+      </p>
+    </header>
+
+    <section class="card starter" aria-labelledby="why-toast">
+      <h2 id="why-toast">Why toast?</h2>
+
+      <p>
+        I needed a memory trick that made STP feel less abstract.
+        So the doctrine became:
+      </p>
+
+      <ul>
+        <li><strong>BPDU = toast</strong></li>
+        <li><strong>TCN = burnt toast</strong></li>
+        <li><strong>Root bridge = the toaster</strong></li>
+      </ul>
+
+      <p>
+        Is it technically ridiculous? Yes.
+        Does it work? Also yes.
+      </p>
+    </section>
+
+    <section class="card starter" aria-labelledby="root">
+      <h2 id="root">The toaster: root bridge</h2>
+
+      <p>
+        STP begins by deciding which switch becomes the root bridge.
+        Once the root is elected, every other switch works out its best path toward it.
+      </p>
+
+      <p>
+        In Toast Doctrine terms, the root bridge is the toaster everyone agrees
+        is the center of the breakfast universe.
+      </p>
+
+      <p>
+        Lower bridge ID wins. Priority matters first, then MAC address breaks the tie.
+      </p>
+    </section>
+
+    <section class="card starter" aria-labelledby="bpdu">
+      <h2 id="bpdu">BPDU = toast</h2>
+
+      <p>
+        BPDUs are the control messages switches use to talk about the STP topology.
+        They carry the information needed to elect the root and maintain the tree.
+      </p>
+
+      <p>
+        If toast is moving around the network, the switches are still talking.
+        If the expected toast disappears, something changed.
+      </p>
+    </section>
+
+    <section class="card starter" aria-labelledby="tcn">
+      <h2 id="tcn">TCN = burnt toast</h2>
+
+      <p>
+        A Topology Change Notification means something in the Layer 2 topology changed
+        and the rest of the network needs to react.
+      </p>
+
+      <p>
+        Burnt toast is the smell that gets everyone's attention.
+        Something changed, and now the network has to update what it knows.
+      </p>
+    </section>
+
+    <section class="card starter" aria-labelledby="convergence">
+      <h2 id="convergence">Why old STP convergence feels painfully slow</h2>
+
+      <p>
+        Traditional 802.1D STP can take up to roughly 50 seconds to reconverge
+        in a classic failure scenario: 20 seconds of Max Age, then 15 seconds
+        Listening and 15 seconds Learning.
+      </p>
+
+      <p>
+        That is an eternity when somebody is staring at a dead link and asking
+        whether the network is broken.
+      </p>
+
+      <p>
+        The lesson for me was not just memorizing the timer.
+        It was understanding why newer STP variants try to converge faster.
+      </p>
+    </section>
+
+    <section class="card starter" aria-labelledby="guards">
+      <h2 id="guards">Guardrails around the toaster</h2>
+
+      <p>
+        The guard features started making more sense once I stopped memorizing
+        names and focused on what kind of bad behavior each one prevents.
+      </p>
+
+      <ul>
+        <li><strong>BPDU Guard</strong> — protects edge ports from unexpected BPDUs.</li>
+        <li><strong>Root Guard</strong> — prevents an unexpected switch from becoming root.</li>
+        <li><strong>Loop Guard</strong> — helps protect against loops when expected BPDUs disappear.</li>
+      </ul>
+
+      <p>
+        Different guard, different failure mode.
+      </p>
+    </section>
+
+    <section class="card starter" aria-labelledby="lesson">
+      <h2 id="lesson">The real lesson</h2>
+
+      <p>
+        STP is not magic. It is a deterministic conversation between switches
+        about who is root, which paths are preferred, and which links need to stay blocked.
+      </p>
+
+      <p>
+        Once I could picture the conversation, the acronyms stopped feeling random.
+      </p>
+
+      <p>
+        And if all else fails:
+        <strong>BPDU = toast. TCN = burnt toast. Root bridge = toaster.</strong>
+      </p>
+    </section>
+  </article>
+
+  <p><a href="/ccnp-journey/">← Back to CCNP Journey</a></p>
+</SiteLayout>

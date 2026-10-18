@@ -1,0 +1,28 @@
+---
+import SiteLayout from '../../layouts/SiteLayout.astro';
+---
+<SiteLayout
+  title="CCNP Journey"
+  description="STP, MST, routing, labs, and the evolving doctrine that BPDU = toast."
+>
+  <p class="eyebrow">null route queen / ccnp journey</p>
+
+  <h1 class="page-title">CCNP Journey</h1>
+
+  <p class="intro">
+    Study notes, lab lessons, memory tricks, and the concepts that needed
+    one more pass before they finally clicked.
+  </p>
+
+  <section class="grid" aria-label="CCNP Journey articles">
+    <a class="card card-link" href="/ccnp-journey/toast-doctrine/">
+      <h2>Toast Doctrine</h2>
+      <p>
+        BPDU = toast, TCN = burnt toast, the root bridge = the toaster,
+        and somehow Spanning Tree finally starts making sense.
+      </p>
+    </a>
+  </section>
+
+  <p><a href="/">← Back to Home</a></p>
+</SiteLayout>
